@@ -24,7 +24,7 @@ List<VO_Artist> voArtists = EntityUtils.packVOList(artists, VO_Artist.class);
 ```
 * 其中 _voClass_ 为VO类, 其结构应与 Cayenne 实体类对应.
 * 可在VO类 ___setter___ 方法上使用 ___@IgnoreSerialize___ 以忽略无须转换的属性. 
-* 可使用本人封装的[数据库逆向工程工具包](http://cayenne.apache.org)自动生成VO类. 
+* 可使用本人封装的[数据库逆向工程工具包](https://github.com/baileykm/re-engineer)自动生成VO类. 
 *  若实体间有外键关系, 序列化时需要将关联的其它实体一同序列化, 可向VO类中添加相应的属性 (注意属性名应与 Cayenne 的 getter 方法对应). 例如:
 ```java
 public class Artist_Ext extends Artist {
