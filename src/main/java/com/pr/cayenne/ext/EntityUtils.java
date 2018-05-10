@@ -43,10 +43,8 @@ public class EntityUtils {
             String methodName = method.getName();
 
             // 忽略非setter方法
-            if (!method.isAccessible() && !methodName.startsWith("set")) continue;
-
-            // 忽略标注了不应进行序列化的字段
-            if (method.isAnnotationPresent(IgnoreSerialize.class)) continue;
+            // 忽略标注了不进行序列化的字段
+            if (!method.isAccessible() && !methodName.startsWith("set") || method.isAnnotationPresent(IgnoreSerialize.class)) continue;
 
             Method setter = method;
 
@@ -111,7 +109,7 @@ public class EntityUtils {
             String methodName = method.getName();
 
             // 忽略非setter方法
-            if (!method.isAccessible() && !methodName.startsWith("set")) continue;
+            if (!method.isAccessible() && !methodName.startsWith("set") || method.isAnnotationPresent(IgnoreSerialize.class)) continue;
 
             Method setter = method;
 
