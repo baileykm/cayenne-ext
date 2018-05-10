@@ -19,8 +19,8 @@
 
 示例:
 ```java
-	List<Artist> artists  = context.performQuery(new SelectQuery(Artist.class));		// Artist 为 Cayenne 实体类
-	List<VO_Artist> voArtists = EntityUtils.packVOList(artists, VO_Artist.class);
+List<Artist> artists  = context.performQuery(new SelectQuery(Artist.class));		// Artist 为 Cayenne 实体类
+List<VO_Artist> voArtists = EntityUtils.packVOList(artists, VO_Artist.class);
 ```
 * 其中 _voClass_ 为VO类, 其结构应与 Cayenne 实体类对应.
 * 可在VO类 ___setter___ 方法上使用 ___@IgnoreSerialize___ 以忽略无须转换的属性. 
